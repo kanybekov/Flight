@@ -1,0 +1,7 @@
+{
+  "database": "nodejsdb",
+  "username": "root",
+  "password": "Panda4Sale",
+  "host": "localhost",
+  "dialect": "mysql"
+}
