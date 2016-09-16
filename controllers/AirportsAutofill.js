@@ -1,11 +1,5 @@
 var fs = require('fs')
 var coolobj = require('../Resource/Airports.json')['airports'];
-//var rawData = fs.readFileSync('./Resource/Airports.json');
-
-//var data = JSON.parse(rawData);
-
-var qq = coolobj[0].name_rus;
-console.log(qq);
 
 module.exports = function (req, res) {
     if(req.method == 'GET'){
@@ -17,8 +11,6 @@ module.exports = function (req, res) {
 
 function getQueryLanguage(req){
     var letter = req.params.query.charCodeAt(0);
-    console.log(letter);
-    console.log(req.params.query);
 
     if(((letter >= 1072) && (letter <= 1103)) || ((letter >= 1040) && (letter <= 1071))){
         return "rus";

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d4656cd-7532-4908-a9c9-978015d1ab8b" name="Default" comment="" />
+    <list default="true" id="3d4656cd-7532-4908-a9c9-978015d1ab8b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/AirportsAutofill.js" afterPath="$PROJECT_DIR$/controllers/AirportsAutofill.js" />
+    </list>
     <ignored path="Flight.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="AirportsAutofill.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/AirportsAutofill.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="221">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -264,12 +266,12 @@
       <updated>1474039051035</updated>
       <workItem from="1474039052407" duration="640000" />
       <workItem from="1474039806797" duration="5308000" />
-      <workItem from="1474056213466" duration="2984000" />
+      <workItem from="1474056213466" duration="3096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8932000" />
+    <option name="totallyTimeSpent" value="9044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -318,7 +320,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/AirportsAutofill.js</url>
-          <line>32</line>
+          <line>24</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
@@ -407,8 +409,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/AirportsAutofill.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
