@@ -11,17 +11,17 @@ module.exports = function (req, res) {
          });
         res.send(q);
     }
-}
+};
 
 function getQueryLanguage(req){
     var letter = req.params.query.charCodeAt(0);
+    var lang = 'name_eng';
 
     if(((letter >= 1072) && (letter <= 1103)) || ((letter >= 1040) && (letter <= 1071))){
-        return "name_rus";
+        lang =  "name_rus";
     }
-    if(((letter >= 97) && (letter <= 122)) || ((letter >= 65) && (letter <= 90))){
-        return "name_eng";
-    }
+
+    return lang;
 }
 
 function search(word, queryLanguage) {
