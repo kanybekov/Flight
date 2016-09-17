@@ -1,0 +1,7 @@
+{
+  "database": "database",
+  "username": "username",
+  "password": "password",
+  "host": "host",
+  "dialect": "mysql"
+}
