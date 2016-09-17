@@ -46,3 +46,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+/Config/db.json
+/Config/config.json
