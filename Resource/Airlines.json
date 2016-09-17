@@ -1,0 +1,1618 @@
+{
+  "airlines": [
+    {
+      "iata_code": "JP",
+      "name_eng": "Adria Airways",
+      "country_rus": "Словения",
+      "country_eng": "Slovenia"
+    },
+    {
+      "iata_code": "A3",
+      "name_eng": "Aegean Airlines",
+      "country_rus": "Греция",
+      "country_eng": "Greece"
+    },
+    {
+      "iata_code": "EI",
+      "name_eng": "Aer Lingus",
+      "country_rus": "Ирландия",
+      "country_eng": "Ireland"
+    },
+    {
+      "iata_code": "NG",
+      "name_eng": "Aero Contractors",
+      "country_rus": "Нигерия",
+      "country_eng": "Nigeria"
+    },
+    {
+      "iata_code": "P5",
+      "name_eng": "Aero RepГєblica",
+      "country_rus": "Колумбия",
+      "country_eng": "Colombia"
+    },
+    {
+      "iata_code": "SU",
+      "name_eng": "Aeroflot",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "AR",
+      "name_eng": "Aerolineas Argentinas",
+      "country_rus": "Аргентина",
+      "country_eng": "Argentina"
+    },
+    {
+      "iata_code": "2K",
+      "name_eng": "Aerolineas Galapagos S.A. Aerogal",
+      "country_rus": "Эквадор",
+      "country_eng": "Ecuador"
+    },
+    {
+      "iata_code": "AM",
+      "name_eng": "Aeromexico",
+      "country_rus": "Мексика",
+      "country_eng": "Mexico"
+    },
+    {
+      "iata_code": "8U",
+      "name_eng": "Afriqiyah Airways",
+      "country_rus": null,
+      "country_eng": "Libya"
+    },
+    {
+      "iata_code": "ZI",
+      "name_eng": "Aigle Azur",
+      "country_rus": "Франция",
+      "country_eng": "France"
+    },
+    {
+      "iata_code": "AH",
+      "name_eng": "Air Algerie",
+      "country_rus": "Алжир",
+      "country_eng": "Algeria"
+    },
+    {
+      "iata_code": "G9",
+      "name_eng": "Air Arabia",
+      "country_rus": "ОАЭ",
+      "country_eng": "United Arab Emirates"
+    },
+    {
+      "iata_code": "KC",
+      "name_eng": "Air Astana",
+      "country_rus": "Казахстан",
+      "country_eng": "Kazakhstan"
+    },
+    {
+      "iata_code": "UU",
+      "name_eng": "Air Austral",
+      "country_rus": null,
+      "country_eng": "RГ©union"
+    },
+    {
+      "iata_code": "BT",
+      "name_eng": "Air Baltic",
+      "country_rus": "Латвия",
+      "country_eng": "Latvia"
+    },
+    {
+      "iata_code": "AB",
+      "name_eng": "Air Berlin",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "BP",
+      "name_eng": "Air Botswana",
+      "country_rus": "Ботсвана",
+      "country_eng": "Botswana"
+    },
+    {
+      "iata_code": "2J",
+      "name_eng": "Air Burkina",
+      "country_rus": null,
+      "country_eng": "Burkina Faso"
+    },
+    {
+      "iata_code": "SM",
+      "name_eng": "Air Cairo",
+      "country_rus": "Египет",
+      "country_eng": "Egypt"
+    },
+    {
+      "iata_code": "TY",
+      "name_eng": "Air Caledonie",
+      "country_rus": null,
+      "country_eng": "New Caledonia"
+    },
+    {
+      "iata_code": "AC",
+      "name_eng": "Air Canada",
+      "country_rus": "Канада",
+      "country_eng": "Canada"
+    },
+    {
+      "iata_code": "CA",
+      "name_eng": "Air China Limited",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "XK",
+      "name_eng": "Air Corsica",
+      "country_rus": "Франция",
+      "country_eng": "France"
+    },
+    {
+      "iata_code": "UX",
+      "name_eng": "Air Europa",
+      "country_rus": "Испания",
+      "country_eng": "Spain"
+    },
+    {
+      "iata_code": "AF",
+      "name_eng": "Air France",
+      "country_rus": "Франция",
+      "country_eng": "France"
+    },
+    {
+      "iata_code": "AI",
+      "name_eng": "Air India ",
+      "country_rus": "Индия",
+      "country_eng": "India"
+    },
+    {
+      "iata_code": "JS",
+      "name_eng": "Air Koryo",
+      "country_rus": null,
+      "country_eng": "Korea, Democratic People's Republic of"
+    },
+    {
+      "iata_code": "NX",
+      "name_eng": "Air Macau",
+      "country_rus": null,
+      "country_eng": "Macao SAR, China"
+    },
+    {
+      "iata_code": "MD",
+      "name_eng": "Air Madagascar",
+      "country_rus": "Мадагаскар",
+      "country_eng": "Madagascar"
+    },
+    {
+      "iata_code": "KM",
+      "name_eng": "Air Malta ",
+      "country_rus": "Мальта",
+      "country_eng": "Malta"
+    },
+    {
+      "iata_code": "MK",
+      "name_eng": "Air Mauritius",
+      "country_rus": "Маврикий",
+      "country_eng": "Mauritius"
+    },
+    {
+      "iata_code": "9U",
+      "name_eng": "Air Moldova",
+      "country_rus": null,
+      "country_eng": "Moldova, Republic of"
+    },
+    {
+      "iata_code": "SW",
+      "name_eng": "Air Namibia",
+      "country_rus": "Намибия",
+      "country_eng": "Namibia"
+    },
+    {
+      "iata_code": "NZ",
+      "name_eng": "Air New Zealand",
+      "country_rus": "Новая Зеландия",
+      "country_eng": "New Zealand"
+    },
+    {
+      "iata_code": "PX",
+      "name_eng": "Air Niugini",
+      "country_rus": null,
+      "country_eng": "Independent State of Papua New Guinea"
+    },
+    {
+      "iata_code": "YW",
+      "name_eng": "Air Nostrum",
+      "country_rus": "Испания",
+      "country_eng": "Spain"
+    },
+    {
+      "iata_code": "JU",
+      "name_eng": "Air SERBIA a.d. Beograd",
+      "country_rus": "Сербия",
+      "country_eng": "Serbia"
+    },
+    {
+      "iata_code": "HM",
+      "name_eng": "Air Seychelles",
+      "country_rus": null,
+      "country_eng": "Seychelles"
+    },
+    {
+      "iata_code": "VT",
+      "name_eng": "Air Tahiti",
+      "country_rus": null,
+      "country_eng": "French Polynesia"
+    },
+    {
+      "iata_code": "TN",
+      "name_eng": "Air Tahiti Nui",
+      "country_rus": null,
+      "country_eng": "French Polynesia"
+    },
+    {
+      "iata_code": "TS",
+      "name_eng": "Air Transat",
+      "country_rus": "Канада",
+      "country_eng": "Canada"
+    },
+    {
+      "iata_code": "RU",
+      "name_eng": "AirBridgeCargo Airlines",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "SB",
+      "name_eng": "Aircalin",
+      "country_rus": null,
+      "country_eng": "New Caledonia"
+    },
+    {
+      "iata_code": "4Z",
+      "name_eng": "Airlink",
+      "country_rus": "ЮАР",
+      "country_eng": "South Africa"
+    },
+    {
+      "iata_code": "AS",
+      "name_eng": "Alaska Airlines",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "AZ",
+      "name_eng": "Alitalia",
+      "country_rus": "Италия",
+      "country_eng": "Italy"
+    },
+    {
+      "iata_code": "NH",
+      "name_eng": "All Nippon Airways",
+      "country_rus": "Япония",
+      "country_eng": "Japan"
+    },
+    {
+      "iata_code": "4W",
+      "name_eng": "Allied Air",
+      "country_rus": "Нигерия",
+      "country_eng": "Nigeria"
+    },
+    {
+      "iata_code": "UJ",
+      "name_eng": "AlMasria Universal Airlines",
+      "country_rus": "Египет",
+      "country_eng": "Egypt"
+    },
+    {
+      "iata_code": "AA",
+      "name_eng": "American Airlines",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "W3",
+      "name_eng": "Arik Air",
+      "country_rus": "Нигерия",
+      "country_eng": "Nigeria"
+    },
+    {
+      "iata_code": "IZ",
+      "name_eng": "Arkia Israeli Airlines ",
+      "country_rus": "Израиль",
+      "country_eng": "Israel"
+    },
+    {
+      "iata_code": "OZ",
+      "name_eng": "Asiana",
+      "country_rus": "Корея Южная",
+      "country_eng": "Korea"
+    },
+    {
+      "iata_code": "5Y",
+      "name_eng": "Atlas Air",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "KK",
+      "name_eng": "AtlasGlobal",
+      "country_rus": "Турция",
+      "country_eng": "Turkey"
+    },
+    {
+      "iata_code": "AU",
+      "name_eng": "Austral",
+      "country_rus": "Аргентина",
+      "country_eng": "Argentina"
+    },
+    {
+      "iata_code": "OS",
+      "name_eng": "Austrian",
+      "country_rus": "Австрия",
+      "country_eng": "Austria"
+    },
+    {
+      "iata_code": "AV",
+      "name_eng": "AVIANCA",
+      "country_rus": "Колумбия",
+      "country_eng": "Colombia"
+    },
+    {
+      "iata_code": "O6",
+      "name_eng": "Avianca Brasil",
+      "country_rus": "Бразилия",
+      "country_eng": "Brazil"
+    },
+    {
+      "iata_code": "J2",
+      "name_eng": "Azerbaijan Airlines",
+      "country_rus": "Азербайджан",
+      "country_eng": "Azerbaijan"
+    },
+    {
+      "iata_code": "AD",
+      "name_eng": "Azul Brazilian Airlines",
+      "country_rus": "Бразилия",
+      "country_eng": "Brazil"
+    },
+    {
+      "iata_code": "UP",
+      "name_eng": "Bahamasair",
+      "country_rus": "Багамские острова",
+      "country_eng": "Bahamas"
+    },
+    {
+      "iata_code": "PG",
+      "name_eng": "Bangkok Air ",
+      "country_rus": "Таиланд",
+      "country_eng": "Thailand"
+    },
+    {
+      "iata_code": "B2",
+      "name_eng": "Belavia - Belarusian Airlines",
+      "country_rus": "Беларусь",
+      "country_eng": "Belarus"
+    },
+    {
+      "iata_code": "8H",
+      "name_eng": "BH AIR",
+      "country_rus": "Болгария",
+      "country_eng": "Bulgaria"
+    },
+    {
+      "iata_code": "BG",
+      "name_eng": "Biman",
+      "country_rus": "Бангладеш",
+      "country_eng": "Bangladesh"
+    },
+    {
+      "iata_code": "NT",
+      "name_eng": "Binter Canarias",
+      "country_rus": "Испания",
+      "country_eng": "Spain"
+    },
+    {
+      "iata_code": "0B",
+      "name_eng": "Blue Air",
+      "country_rus": "Румыния",
+      "country_eng": "Romania"
+    },
+    {
+      "iata_code": "BV",
+      "name_eng": "Blue Panorama",
+      "country_rus": "Италия",
+      "country_eng": "Italy"
+    },
+    {
+      "iata_code": "BM",
+      "name_eng": "bmi Regional",
+      "country_rus": "Великобритания",
+      "country_eng": "United Kingdom"
+    },
+    {
+      "iata_code": "OB",
+      "name_eng": "Boliviana de AviaciГіn - BoA",
+      "country_rus": "Боливия",
+      "country_eng": "Bolivia"
+    },
+    {
+      "iata_code": "TF",
+      "name_eng": "Braathens Regional Aviation AB",
+      "country_rus": "Швеция",
+      "country_eng": "Sweden"
+    },
+    {
+      "iata_code": "BA",
+      "name_eng": "British Airways",
+      "country_rus": "Великобритания",
+      "country_eng": "United Kingdom"
+    },
+    {
+      "iata_code": "SN",
+      "name_eng": "Brussels Airlines",
+      "country_rus": "Бельгия",
+      "country_eng": "Belgium"
+    },
+    {
+      "iata_code": "FB",
+      "name_eng": "Bulgaria air",
+      "country_rus": "Болгария",
+      "country_eng": "Bulgaria"
+    },
+    {
+      "iata_code": "5C",
+      "name_eng": "C.A.L. Cargo Airlines",
+      "country_rus": "Израиль",
+      "country_eng": "Israel"
+    },
+    {
+      "iata_code": "QC",
+      "name_eng": "Camair-Co",
+      "country_rus": "Камерун",
+      "country_eng": "Cameroon"
+    },
+    {
+      "iata_code": "JD",
+      "name_eng": "Capital Airlines",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "W8",
+      "name_eng": "Cargojet Airways ",
+      "country_rus": "Канада",
+      "country_eng": "Canada"
+    },
+    {
+      "iata_code": "CV",
+      "name_eng": "Cargolux S.A.",
+      "country_rus": "Люксембург",
+      "country_eng": "Luxembourg"
+    },
+    {
+      "iata_code": "BW",
+      "name_eng": "Caribbean Airlines",
+      "country_rus": null,
+      "country_eng": "Trinidad and Tobago"
+    },
+    {
+      "iata_code": "V3",
+      "name_eng": "Carpatair",
+      "country_rus": "Румыния",
+      "country_eng": "Romania"
+    },
+    {
+      "iata_code": "CX",
+      "name_eng": "Cathay Pacific",
+      "country_rus": "Гонконг",
+      "country_eng": "Hong Kong SAR, China"
+    },
+    {
+      "iata_code": "CI",
+      "name_eng": "China Airlines",
+      "country_rus": "Китайский Тайбэй",
+      "country_eng": "Chinese Taipei"
+    },
+    {
+      "iata_code": "CK",
+      "name_eng": "China Cargo Airlines ",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "MU",
+      "name_eng": "China Eastern",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "CF",
+      "name_eng": "China Postal Airlines",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "CZ",
+      "name_eng": "China Southern Airlines",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "WX",
+      "name_eng": "CityJet",
+      "country_rus": "Ирландия",
+      "country_eng": "Ireland"
+    },
+    {
+      "iata_code": "MN",
+      "name_eng": "Comair",
+      "country_rus": "ЮАР",
+      "country_eng": "South Africa"
+    },
+    {
+      "iata_code": "DE",
+      "name_eng": "Condor",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "CM",
+      "name_eng": "COPA Airlines",
+      "country_rus": "Панама",
+      "country_eng": "Panama"
+    },
+    {
+      "iata_code": "XC",
+      "name_eng": "Corendon Airlines",
+      "country_rus": "Турция",
+      "country_eng": "Turkey"
+    },
+    {
+      "iata_code": "SS",
+      "name_eng": "Corsair International",
+      "country_rus": "Франция",
+      "country_eng": "France"
+    },
+    {
+      "iata_code": "OU",
+      "name_eng": "Croatia Airlines",
+      "country_rus": "Хорватия",
+      "country_eng": "Croatia"
+    },
+    {
+      "iata_code": "CU",
+      "name_eng": "Cubana",
+      "country_rus": "Куба",
+      "country_eng": "Cuba"
+    },
+    {
+      "iata_code": "OK",
+      "name_eng": "Czech Airlines j.s.c",
+      "country_rus": "Чехия",
+      "country_eng": "Czech Republic"
+    },
+    {
+      "iata_code": "DL",
+      "name_eng": "Delta Air Lines",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "D0",
+      "name_eng": "DHL Air ",
+      "country_rus": "Великобритания",
+      "country_eng": "United Kingdom"
+    },
+    {
+      "iata_code": "ES*",
+      "name_eng": "DHL Aviation EEMEA B.S.C.(c) ",
+      "country_rus": "Бахрейн",
+      "country_eng": "Bahrain"
+    },
+    {
+      "iata_code": "Z6*",
+      "name_eng": "Dniproavia",
+      "country_rus": "Украина",
+      "country_eng": "Ukraine"
+    },
+    {
+      "iata_code": "KA",
+      "name_eng": "Dragonair",
+      "country_rus": "Гонконг",
+      "country_eng": "Hong Kong SAR, China"
+    },
+    {
+      "iata_code": "MS",
+      "name_eng": "Egyptair",
+      "country_rus": "Египет",
+      "country_eng": "Egypt"
+    },
+    {
+      "iata_code": "LY",
+      "name_eng": "EL AL",
+      "country_rus": "Израиль",
+      "country_eng": "Israel"
+    },
+    {
+      "iata_code": "EK",
+      "name_eng": "Emirates",
+      "country_rus": "ОАЭ",
+      "country_eng": "United Arab Emirates"
+    },
+    {
+      "iata_code": "ET",
+      "name_eng": "Ethiopian Airlines",
+      "country_rus": "Эфиопия",
+      "country_eng": "Ethiopia"
+    },
+    {
+      "iata_code": "EY",
+      "name_eng": "Etihad Airways",
+      "country_rus": "ОАЭ",
+      "country_eng": "United Arab Emirates"
+    },
+    {
+      "iata_code": "YU",
+      "name_eng": "Euroatlantic Airways",
+      "country_rus": "Португалия",
+      "country_eng": "Portugal"
+    },
+    {
+      "iata_code": "QY",
+      "name_eng": "European Air Transport",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "EW",
+      "name_eng": "Eurowings",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "BR",
+      "name_eng": "EVA Air",
+      "country_rus": "Китайский Тайбэй",
+      "country_eng": "Chinese Taipei"
+    },
+    {
+      "iata_code": "FX",
+      "name_eng": "Federal Express",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "FJ",
+      "name_eng": "Fiji Airways",
+      "country_rus": "Фиджи",
+      "country_eng": "Fiji"
+    },
+    {
+      "iata_code": "AY",
+      "name_eng": "Finnair",
+      "country_rus": "Финляндия",
+      "country_eng": "Finland"
+    },
+    {
+      "iata_code": "BE",
+      "name_eng": "flybe",
+      "country_rus": "Великобритания",
+      "country_eng": "United Kingdom"
+    },
+    {
+      "iata_code": "FZ",
+      "name_eng": "flydubai",
+      "country_rus": "ОАЭ",
+      "country_eng": "United Arab Emirates"
+    },
+    {
+      "iata_code": "FT",
+      "name_eng": "FlyEgypt",
+      "country_rus": "Египет",
+      "country_eng": "Egypt"
+    },
+    {
+      "iata_code": "FH",
+      "name_eng": "Freebird Airlines",
+      "country_rus": "Турция",
+      "country_eng": "Turkey"
+    },
+    {
+      "iata_code": "GA",
+      "name_eng": "Garuda",
+      "country_rus": "Индонезия",
+      "country_eng": "Indonesia"
+    },
+    {
+      "iata_code": "A9",
+      "name_eng": "Georgian Airways",
+      "country_rus": "Грузия",
+      "country_eng": "Georgia"
+    },
+    {
+      "iata_code": "ST",
+      "name_eng": "Germania",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "GF",
+      "name_eng": "Gulf Air",
+      "country_rus": "Бахрейн",
+      "country_eng": "Bahrain"
+    },
+    {
+      "iata_code": "HR*",
+      "name_eng": "Hahn Air",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "HU",
+      "name_eng": "Hainan Airlines",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "HA",
+      "name_eng": "Hawaiian Airlines",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "5K",
+      "name_eng": "Hi Fly",
+      "country_rus": "Португалия",
+      "country_eng": "Portugal"
+    },
+    {
+      "iata_code": "HX",
+      "name_eng": "Hong Kong Airlines",
+      "country_rus": "Гонконг",
+      "country_eng": "Hong Kong SAR, China"
+    },
+    {
+      "iata_code": "UO",
+      "name_eng": "Hong Kong Express Airways ",
+      "country_rus": "Гонконг",
+      "country_eng": "Hong Kong SAR, China"
+    },
+    {
+      "iata_code": "IB",
+      "name_eng": "IBERIA",
+      "country_rus": "Испания",
+      "country_eng": "Spain"
+    },
+    {
+      "iata_code": "FI",
+      "name_eng": "Icelandair",
+      "country_rus": "Исландия",
+      "country_eng": "Iceland"
+    },
+    {
+      "iata_code": "7i",
+      "name_eng": "InselAir",
+      "country_rus": null,
+      "country_eng": "CuraГ§ao"
+    },
+    {
+      "iata_code": "4O",
+      "name_eng": "Interjet",
+      "country_rus": "Мексика",
+      "country_eng": "Mexico"
+    },
+    {
+      "iata_code": "IR",
+      "name_eng": "Iran Air",
+      "country_rus": "Иран",
+      "country_eng": "Iran, Islamic Republic of"
+    },
+    {
+      "iata_code": "EP",
+      "name_eng": "Iran Aseman Airlines",
+      "country_rus": "Иран",
+      "country_eng": "Iran, Islamic Republic of"
+    },
+    {
+      "iata_code": "6H",
+      "name_eng": "Israir",
+      "country_rus": "Израиль",
+      "country_eng": "Israel"
+    },
+    {
+      "iata_code": "JL",
+      "name_eng": "Japan Airlines",
+      "country_rus": "Япония",
+      "country_eng": "Japan"
+    },
+    {
+      "iata_code": "J9",
+      "name_eng": "Jazeera Airways ",
+      "country_rus": "Кувейт",
+      "country_eng": "Kuwait"
+    },
+    {
+      "iata_code": "9W",
+      "name_eng": "Jet Airways",
+      "country_rus": "Индия",
+      "country_eng": "India"
+    },
+    {
+      "iata_code": "S2",
+      "name_eng": "Jet Lite (India) Limited",
+      "country_rus": "Индия",
+      "country_eng": "India"
+    },
+    {
+      "iata_code": "B6",
+      "name_eng": "JetBlue",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "R5",
+      "name_eng": "Jordan Aviation",
+      "country_rus": "Иордания",
+      "country_eng": "Jordan"
+    },
+    {
+      "iata_code": "5N",
+      "name_eng": "JSC Nordavia-RA",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "HO",
+      "name_eng": "Juneyao Airlines",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "KQ",
+      "name_eng": "Kenya Airways",
+      "country_rus": "Кения",
+      "country_eng": "Kenya"
+    },
+    {
+      "iata_code": "Y9",
+      "name_eng": "Kish Air",
+      "country_rus": "Иран",
+      "country_eng": "Iran, Islamic Republic of"
+    },
+    {
+      "iata_code": "KL",
+      "name_eng": "KLM",
+      "country_rus": "Нидерланды",
+      "country_eng": "Netherlands"
+    },
+    {
+      "iata_code": "KE",
+      "name_eng": "Korean Air",
+      "country_rus": "Корея Южная",
+      "country_eng": "Korea"
+    },
+    {
+      "iata_code": "KU",
+      "name_eng": "Kuwait Airways",
+      "country_rus": "Кувейт",
+      "country_eng": "Kuwait"
+    },
+    {
+      "iata_code": "LR",
+      "name_eng": "LACSA",
+      "country_rus": "Коста-Рика",
+      "country_eng": "Costa Rica"
+    },
+    {
+      "iata_code": "TM",
+      "name_eng": "LAM",
+      "country_rus": "Мозамбик",
+      "country_eng": "Mozambique"
+    },
+    {
+      "iata_code": "QV",
+      "name_eng": "Lao Airlines",
+      "country_rus": null,
+      "country_eng": "Lao People's Democratic Republic"
+    },
+    {
+      "iata_code": "4M",
+      "name_eng": "LATAM Airlines Argentina",
+      "country_rus": "Аргентина",
+      "country_eng": "Argentina"
+    },
+    {
+      "iata_code": "JJ",
+      "name_eng": "LATAM Airlines Brasil",
+      "country_rus": "Бразилия",
+      "country_eng": "Brazil"
+    },
+    {
+      "iata_code": "4C",
+      "name_eng": "LATAM Airlines Colombia",
+      "country_rus": "Колумбия",
+      "country_eng": "Colombia"
+    },
+    {
+      "iata_code": "XL",
+      "name_eng": "LATAM Airlines Ecuador",
+      "country_rus": "Эквадор",
+      "country_eng": "Ecuador"
+    },
+    {
+      "iata_code": "LA",
+      "name_eng": "LATAM Airlines Group",
+      "country_rus": "Чили",
+      "country_eng": "Chile"
+    },
+    {
+      "iata_code": "PZ",
+      "name_eng": "LATAM Airlines Paraguay",
+      "country_rus": "Парагвай",
+      "country_eng": "Paraguay"
+    },
+    {
+      "iata_code": "LP",
+      "name_eng": "LATAM Airlines Peru",
+      "country_rus": "Перу",
+      "country_eng": "Peru"
+    },
+    {
+      "iata_code": "M3",
+      "name_eng": "LATAM Cargo Brasil",
+      "country_rus": "Бразилия",
+      "country_eng": "Brazil"
+    },
+    {
+      "iata_code": "UC",
+      "name_eng": "LATAM Cargo Chile",
+      "country_rus": "Чили",
+      "country_eng": "Chile"
+    },
+    {
+      "iata_code": "M7",
+      "name_eng": "LATAM Cargo Mexico",
+      "country_rus": "Мексика",
+      "country_eng": "Mexico"
+    },
+    {
+      "iata_code": "LI",
+      "name_eng": "LIAT Airlines",
+      "country_rus": null,
+      "country_eng": "Antigua and Barbuda"
+    },
+    {
+      "iata_code": "N4",
+      "name_eng": "LLC \"NORD WIND\"",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "GJ",
+      "name_eng": "Loong Air",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "LO",
+      "name_eng": "LOT Polish Airlines",
+      "country_rus": "Польша",
+      "country_eng": "Poland"
+    },
+    {
+      "iata_code": "8L",
+      "name_eng": "Lucky Air",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "LH",
+      "name_eng": "Lufthansa",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "LH",
+      "name_eng": "Lufthansa Cargo",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "CL",
+      "name_eng": "Lufthansa CityLine",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "LG",
+      "name_eng": "Luxair",
+      "country_rus": "Люксембург",
+      "country_eng": "Luxembourg"
+    },
+    {
+      "iata_code": "W5",
+      "name_eng": "Mahan Air",
+      "country_rus": "Иран",
+      "country_eng": "Iran, Islamic Republic of"
+    },
+    {
+      "iata_code": "MH",
+      "name_eng": "Malaysia Airlines",
+      "country_rus": "Малайзия",
+      "country_eng": "Malaysia"
+    },
+    {
+      "iata_code": "AE",
+      "name_eng": "Mandarin Airlines",
+      "country_rus": "Китайский Тайбэй",
+      "country_eng": "Chinese Taipei"
+    },
+    {
+      "iata_code": "MP",
+      "name_eng": "Martinair Cargo",
+      "country_rus": "Нидерланды",
+      "country_eng": "Netherlands"
+    },
+    {
+      "iata_code": "L6",
+      "name_eng": "Mauritania Airlines International",
+      "country_rus": "Мавритания",
+      "country_eng": "Mauritania"
+    },
+    {
+      "iata_code": "ME",
+      "name_eng": "MEA",
+      "country_rus": "Ливан",
+      "country_eng": "Lebanon"
+    },
+    {
+      "iata_code": "IG",
+      "name_eng": "Meridiana fly",
+      "country_rus": "Италия",
+      "country_eng": "Italy"
+    },
+    {
+      "iata_code": "OM",
+      "name_eng": "MIAT",
+      "country_rus": "Монголия",
+      "country_eng": "Mongolia"
+    },
+    {
+      "iata_code": "M4",
+      "name_eng": "Mistral Air",
+      "country_rus": "Италия",
+      "country_eng": "Italy"
+    },
+    {
+      "iata_code": "YM",
+      "name_eng": "Montenegro Airlines",
+      "country_rus": "Черногория",
+      "country_eng": "Montenegro"
+    },
+    {
+      "iata_code": "8M",
+      "name_eng": "Myanmar Airways International",
+      "country_rus": null,
+      "country_eng": "Myanmar"
+    },
+    {
+      "iata_code": "NE",
+      "name_eng": "Nesma Airlines",
+      "country_rus": "Египет",
+      "country_eng": "Egypt"
+    },
+    {
+      "iata_code": "2N",
+      "name_eng": "Nextjet",
+      "country_rus": "Швеция",
+      "country_eng": "Sweden"
+    },
+    {
+      "iata_code": "HG",
+      "name_eng": "NIKI",
+      "country_rus": "Австрия",
+      "country_eng": "Austria"
+    },
+    {
+      "iata_code": "NP",
+      "name_eng": "Nile Air",
+      "country_rus": "Египет",
+      "country_eng": "Egypt"
+    },
+    {
+      "iata_code": "KZ",
+      "name_eng": "Nippon Cargo Airlines (NCA)",
+      "country_rus": "Япония",
+      "country_eng": "Japan"
+    },
+    {
+      "iata_code": "BJ",
+      "name_eng": "Nouvelair",
+      "country_rus": "Тунис",
+      "country_eng": "Tunisia"
+    },
+    {
+      "iata_code": "BK",
+      "name_eng": "Okay Airways",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "OA",
+      "name_eng": "Olympic Air",
+      "country_rus": "Греция",
+      "country_eng": "Greece"
+    },
+    {
+      "iata_code": "WY",
+      "name_eng": "Oman Air",
+      "country_rus": "Оман",
+      "country_eng": "Oman"
+    },
+    {
+      "iata_code": "8Q",
+      "name_eng": "Onur Air",
+      "country_rus": "Турция",
+      "country_eng": "Turkey"
+    },
+    {
+      "iata_code": "",
+      "name_eng": "Overland Airways",
+      "country_rus": "Нигерия",
+      "country_eng": "Nigeria"
+    },
+    {
+      "iata_code": "PC",
+      "name_eng": "Pegasus Airlines",
+      "country_rus": "Турция",
+      "country_eng": "Turkey"
+    },
+    {
+      "iata_code": "NI",
+      "name_eng": "PGA-PortugГЎlia Airlines",
+      "country_rus": "Португалия",
+      "country_eng": "Portugal"
+    },
+    {
+      "iata_code": "PR",
+      "name_eng": "Philippine Airlines",
+      "country_rus": "Филиппины",
+      "country_eng": "Philippines"
+    },
+    {
+      "iata_code": "PK",
+      "name_eng": "PIA",
+      "country_rus": "Пакистан",
+      "country_eng": "Pakistan"
+    },
+    {
+      "iata_code": "PW",
+      "name_eng": "Precision Air",
+      "country_rus": null,
+      "country_eng": "Tanzania, United Republic of"
+    },
+    {
+      "iata_code": "PV",
+      "name_eng": "PrivatAir",
+      "country_rus": "Швейцария",
+      "country_eng": "Switzerland"
+    },
+    {
+      "iata_code": "QF",
+      "name_eng": "Qantas",
+      "country_rus": "Австралия",
+      "country_eng": "Australia"
+    },
+    {
+      "iata_code": "QR",
+      "name_eng": "Qatar Airways",
+      "country_rus": "Катар",
+      "country_eng": "Qatar"
+    },
+    {
+      "iata_code": "FV",
+      "name_eng": "Rossiya Airlines ",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "AT",
+      "name_eng": "Royal Air Maroc",
+      "country_rus": "Марокко",
+      "country_eng": "Morocco"
+    },
+    {
+      "iata_code": "BI",
+      "name_eng": "Royal Brunei",
+      "country_rus": "Бруней",
+      "country_eng": "Brunei Darussalam"
+    },
+    {
+      "iata_code": "RJ",
+      "name_eng": "Royal Jordanian",
+      "country_rus": "Иордания",
+      "country_eng": "Jordan"
+    },
+    {
+      "iata_code": "WB",
+      "name_eng": "RwandAir",
+      "country_rus": null,
+      "country_eng": "Rwanda"
+    },
+    {
+      "iata_code": "S7",
+      "name_eng": "S7 Airlines",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "SA",
+      "name_eng": "SAA",
+      "country_rus": "ЮАР",
+      "country_eng": "South Africa"
+    },
+    {
+      "iata_code": "FA*",
+      "name_eng": "Safair",
+      "country_rus": "ЮАР",
+      "country_eng": "South Africa"
+    },
+    {
+      "iata_code": "4Q",
+      "name_eng": "Safi Airways",
+      "country_rus": "Афганистан",
+      "country_eng": "Afghanistan"
+    },
+    {
+      "iata_code": "S3",
+      "name_eng": "Santa Barbara",
+      "country_rus": "Венесуэла",
+      "country_eng": "Venezuela"
+    },
+    {
+      "iata_code": "SK",
+      "name_eng": "SAS",
+      "country_rus": "Швеция",
+      "country_eng": "Sweden"
+    },
+    {
+      "iata_code": "SP",
+      "name_eng": "SATAsAir AГ§ores",
+      "country_rus": "Португалия",
+      "country_eng": "Portugal"
+    },
+    {
+      "iata_code": "S4",
+      "name_eng": "SATA Internacional",
+      "country_rus": "Португалия",
+      "country_eng": "Portugal"
+    },
+    {
+      "iata_code": "SV",
+      "name_eng": "Saudi Arabian Airlines",
+      "country_rus": "Саудовская Аравия",
+      "country_eng": "Saudi Arabia"
+    },
+    {
+      "iata_code": "SC",
+      "name_eng": "Shandong Airlines ",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "FM",
+      "name_eng": "Shanghai Airlines",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "ZH",
+      "name_eng": "Shenzhen Airlines ",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "SQ",
+      "name_eng": "SIA",
+      "country_rus": "Сингапур",
+      "country_eng": "Singapore"
+    },
+    {
+      "iata_code": "SQ",
+      "name_eng": "SIA Cargo",
+      "country_rus": "Сингапур",
+      "country_eng": "Singapore"
+    },
+    {
+      "iata_code": "3U",
+      "name_eng": "Sichuan Airlines ",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "7L",
+      "name_eng": "Silk Way West Airlines",
+      "country_rus": "Азербайджан",
+      "country_eng": "Azerbaijan"
+    },
+    {
+      "iata_code": "MI",
+      "name_eng": "Silkair",
+      "country_rus": "Сингапур",
+      "country_eng": "Singapore"
+    },
+    {
+      "iata_code": "H2",
+      "name_eng": "SKY Airline",
+      "country_rus": "Чили",
+      "country_eng": "Chile"
+    },
+    {
+      "iata_code": "XZ",
+      "name_eng": "South African Express Airways",
+      "country_rus": "ЮАР",
+      "country_eng": "South Africa"
+    },
+    {
+      "iata_code": "UL",
+      "name_eng": "SriLankan",
+      "country_rus": "Шри-Ланка",
+      "country_eng": "Sri Lanka"
+    },
+    {
+      "iata_code": "XQ*",
+      "name_eng": "SunExpress",
+      "country_rus": "Турция",
+      "country_eng": "Turkey"
+    },
+    {
+      "iata_code": "PY",
+      "name_eng": "Surinam Airways",
+      "country_rus": null,
+      "country_eng": "Suriname"
+    },
+    {
+      "iata_code": "LX",
+      "name_eng": "SWISS",
+      "country_rus": "Швейцария",
+      "country_eng": "Switzerland"
+    },
+    {
+      "iata_code": "RB",
+      "name_eng": "Syrianair",
+      "country_rus": "Сирия",
+      "country_eng": "Syrian Arab Republic"
+    },
+    {
+      "iata_code": "DT",
+      "name_eng": "TAAG - Angola Airlines",
+      "country_rus": "Ангола",
+      "country_eng": "Angola"
+    },
+    {
+      "iata_code": "TA",
+      "name_eng": "TACA",
+      "country_rus": null,
+      "country_eng": "El Salvador"
+    },
+    {
+      "iata_code": "T0",
+      "name_eng": "TACA Peru",
+      "country_rus": "Перу",
+      "country_eng": "Peru"
+    },
+    {
+      "iata_code": "VR",
+      "name_eng": "TACV Cabo Verde Airlines",
+      "country_rus": null,
+      "country_eng": "Cape Verde"
+    },
+    {
+      "iata_code": "EQ",
+      "name_eng": "TAME - Linea AГ©rea del Ecuador",
+      "country_rus": "Эквадор",
+      "country_eng": "Ecuador"
+    },
+    {
+      "iata_code": "TP",
+      "name_eng": "TAP Portugal",
+      "country_rus": "Португалия",
+      "country_eng": "Portugal"
+    },
+    {
+      "iata_code": "RO",
+      "name_eng": "TAROM ",
+      "country_rus": "Румыния",
+      "country_eng": "Romania"
+    },
+    {
+      "iata_code": "SF",
+      "name_eng": "Tassili Airlines",
+      "country_rus": "Алжир",
+      "country_eng": "Algeria"
+    },
+    {
+      "iata_code": "TG",
+      "name_eng": "Thai Airways International",
+      "country_rus": "Таиланд",
+      "country_eng": "Thailand"
+    },
+    {
+      "iata_code": "SL",
+      "name_eng": "Thai Lion Air",
+      "country_rus": "Таиланд",
+      "country_eng": "Thailand"
+    },
+    {
+      "iata_code": "TK",
+      "name_eng": "THY - Turkish Airlines",
+      "country_rus": "Турция",
+      "country_eng": "Turkey"
+    },
+    {
+      "iata_code": "GS",
+      "name_eng": "Tianjin Airlines",
+      "country_rus": "Китай",
+      "country_eng": "China (People's Republic of)"
+    },
+    {
+      "iata_code": "3V",
+      "name_eng": "TNT Airways S.A.",
+      "country_rus": "Бельгия",
+      "country_eng": "Belgium"
+    },
+    {
+      "iata_code": "GE",
+      "name_eng": "TransAsia Airways",
+      "country_rus": "Китайский Тайбэй",
+      "country_eng": "Chinese Taipei"
+    },
+    {
+      "iata_code": "X3*",
+      "name_eng": "TUIfly",
+      "country_rus": "Германия",
+      "country_eng": "Germany"
+    },
+    {
+      "iata_code": "TU",
+      "name_eng": "Tunisair",
+      "country_rus": "Тунис",
+      "country_eng": "Tunisia"
+    },
+    {
+      "iata_code": "TW",
+      "name_eng": "T'way Air",
+      "country_rus": "Корея Южная",
+      "country_eng": "Korea"
+    },
+    {
+      "iata_code": "PS",
+      "name_eng": "Ukraine International Airlines",
+      "country_rus": "Украина",
+      "country_eng": "Ukraine"
+    },
+    {
+      "iata_code": "UA",
+      "name_eng": "United Airlines",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "5X",
+      "name_eng": "UPS Airlines",
+      "country_rus": "США",
+      "country_eng": "United States"
+    },
+    {
+      "iata_code": "U6",
+      "name_eng": "Ural Airlines",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "UT",
+      "name_eng": "UTair",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "HY",
+      "name_eng": "Uzbekistan Airways",
+      "country_rus": "Узбекистан",
+      "country_eng": "Uzbekistan"
+    },
+    {
+      "iata_code": "VJ",
+      "name_eng": "Vietjet",
+      "country_rus": null,
+      "country_eng": "Vietnam"
+    },
+    {
+      "iata_code": "VN",
+      "name_eng": "Vietnam Airlines",
+      "country_rus": null,
+      "country_eng": "Vietnam"
+    },
+    {
+      "iata_code": "VS",
+      "name_eng": "Virgin Atlantic",
+      "country_rus": "Великобритания",
+      "country_eng": "United Kingdom"
+    },
+    {
+      "iata_code": "VA",
+      "name_eng": "Virgin Australia",
+      "country_rus": "Австралия",
+      "country_eng": "Australia"
+    },
+    {
+      "iata_code": "VG",
+      "name_eng": "VLM Airlines",
+      "country_rus": "Бельгия",
+      "country_eng": "Belgium"
+    },
+    {
+      "iata_code": "Y4*",
+      "name_eng": "Volaris",
+      "country_rus": "Мексика",
+      "country_eng": "Mexico"
+    },
+    {
+      "iata_code": "VI*",
+      "name_eng": "Volga-Dnepr Airlines",
+      "country_rus": "Российская Федерация",
+      "country_eng": "Russian Federation"
+    },
+    {
+      "iata_code": "G3",
+      "name_eng": "VRG Linhas AГ©reas S.A. - Grupo GOL",
+      "country_rus": "Бразилия",
+      "country_eng": "Brazil"
+    },
+    {
+      "iata_code": "VY",
+      "name_eng": "Vueling",
+      "country_rus": "Испания",
+      "country_eng": "Spain"
+    },
+    {
+      "iata_code": "EB",
+      "name_eng": "Wamos Air",
+      "country_rus": "Испания",
+      "country_eng": "Spain"
+    },
+    {
+      "iata_code": "WS",
+      "name_eng": "WestJet",
+      "country_rus": "Канада",
+      "country_eng": "Canada"
+    },
+    {
+      "iata_code": "WI",
+      "name_eng": "White coloured by you",
+      "country_rus": "Португалия",
+      "country_eng": "Portugal"
+    },
+    {
+      "iata_code": "IY",
+      "name_eng": "Wideroe",
+      "country_rus": "Йемен",
+      "country_eng": "Yemen"
+    },
+    {
+      "iata_code": "WF",
+      "name_eng": "Wideroe",
+      "country_rus": "Норвегия",
+      "country_eng": "Norway"
+    },
+    {
+      "iata_code": "MF",
+      "name_eng": "Xiamen Airlines",
+      "country_rus": null,
+      "country_eng": "China"
+    },
+    {
+      "iata_code": "IY",
+      "name_eng": "Yemenia",
+      "country_rus": "Йемен",
+      "country_eng": "Yemen"
+    }
+  ]
+}
