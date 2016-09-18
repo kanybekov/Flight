@@ -49,3 +49,4 @@ fabric.properties
 /Config/db.json
 /Config/config.json
 /.idea/
+config/service.json

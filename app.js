@@ -1,4 +1,5 @@
-var config = require('./Config/basic/config.json');
+var dbconfig = require('./config/db.json');
+var serviceConfig = require('./config/service.json');
 
 var express = require('express');
 var app =  express();
@@ -17,7 +18,7 @@ app.use(function(err, req, res, next) {
     res.send(err.message || '404');
 });
 
-var port = config.port || 3000;
-var host = config.host || 'localhost';
+var port = serviceConfig.port || 3000;
+var host = serviceConfig.host || 'localhost';
 app.listen(port, host);
 console.log('service started at ' + host + ':' + port);
