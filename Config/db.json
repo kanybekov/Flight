@@ -1,7 +1,0 @@
-{
-  "database": "flight",
-  "username": "root",
-  "password": "Panda4Sale",
-  "host": "host",
-  "dialect": "mysql"
-}
