@@ -50,3 +50,4 @@ fabric.properties
 /Config/config.json
 /.idea/
 config/service.json
+/сonfig/db.json
