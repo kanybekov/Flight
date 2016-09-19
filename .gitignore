@@ -49,5 +49,5 @@ fabric.properties
 /Config/db.json
 /Config/config.json
 /.idea/
-config/service.json
+/config/service.json
 /сonfig/db.json
