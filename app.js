@@ -1,5 +1,4 @@
-var dbconfig = require('./config/db.json');
-var serviceConfig = require('./config/service.json');
+var serviceConfig = require('./сonfig/service.json');
 
 var express = require('express');
 var app =  express();
@@ -17,6 +16,8 @@ app.use(function(err, req, res, next) {
     }
     res.send(err.message || '404');
 });
+
+
 
 var port = serviceConfig.port || 3000;
 var host = serviceConfig.host || 'localhost';

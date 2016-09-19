@@ -1,19 +1,31 @@
 var fs = require('fs');
-var jsonObj = require('../resources/airports.json')['airports'];
+var dbconfig = require('../сonfig/db.json');
+
+var mongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
 var getQueryLanguage = require('../helpers/get_query_language');
-var search = require('../helpers/search');
+
 
 module.exports = function (req, res) {
-    if(req.method == 'GET'){
+    mongoClient.connect(dbconfig.host, function (err,db) {
+        assert.equal(err,null);
+        //raise error
+        console.log("Connected successfully to db server");
+        var collection = db.collection('airports');
+
         var queryLanguage = getQueryLanguage(req);
-        var toRespond = search(req.params.query, queryLanguage,jsonObj);
-        var q = [];
-         toRespond.forEach(function (element) {
-             q.push(element[queryLanguage]);
-         });
-        res.send(q);
-    }
+        var query = {}, specifyReturnedFieldsQuery = {};
+        var reg = new RegExp("^" + req.params.query +"", "i");
+        query[queryLanguage]  = {$regex:reg};
+        specifyReturnedFieldsQuery[queryLanguage] = 1;
+        specifyReturnedFieldsQuery["_id"] = 0;
+
+        console.log(query,specifyReturnedFieldsQuery);
+        collection.find(query,specifyReturnedFieldsQuery).toArray(function (err, docs) {
+            assert.equal(err,null);
+            //raise error
+            db.close();
+            res.send(docs);
+        });
+    })
 };
-
-
-
