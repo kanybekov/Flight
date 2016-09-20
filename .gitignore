@@ -51,3 +51,4 @@ fabric.properties
 /.idea/
 /config/service.json
 /сonfig/db.json
+/node_modules/
