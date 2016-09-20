@@ -18,7 +18,7 @@ router
             finalQuery.push(pp);
         });
 
-        db.Airport.find({$or:finalQuery}, finalFilter, function (err, airports) {
+        db.Airline.find({$or:finalQuery}, finalFilter, function (err, airports) {
             if (err)
                 return console.error(err);
             res.send(airports);
