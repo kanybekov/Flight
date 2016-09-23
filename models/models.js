@@ -8,6 +8,7 @@ var db = {
         city_ru: String,
         city_en: String,
         country_ru: String,
+        country_en: String,
         latitude: String,
         longitude: String,
         is_europe: String
