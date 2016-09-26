@@ -1,8 +1,8 @@
 var express = require('express'),
     router = express.Router(),
-    geolib = require('geolib'),
-    parseCalculateRequest = require('../helpers/calculate_request_parser'),
-    calculateCancellation = require('../helpers/calculators/calculate_cancellation');
+    mongoose = require('mongoose'),
+    calculateDelay = require('../helpers/calculators/calculate_delay'),
+    calculateBumping = require('../helpers/calculators/calculate_bumping_off');
 
     /*
      occasion - что произошло [отмена - задержка - отказ = 012]
@@ -23,30 +23,19 @@ var express = require('express'),
 router
     .post('/',function (req, res, next) {
         req.on('data', function (data) {
-            var bodyStr = JSON.parse(data.toString());
-            var parsed = parseCalculateRequest(bodyStr);
+            var parsed = JSON.parse(data.toString());
+            db.Airport.find({
+                "_id" : {$in : [
+                    mongoose.Types.ObjectId(parsed.cityTo),
+                    mongoose.Types.ObjectId(parsed.cityFrom)
+                ]}
+            }, function (err, result) {
+                    var airportToObject = result[0];
+                    var airportFromObject = result[1];
 
-            db.Airport.find({"_id" : parsed.cityTo}, function (err, airportFromObject) {
-                if (err)
-                    return console.error(err);
-                db.Airport.find({"_id" : parsed.cityFrom}, function (err, airportToObject) {
-                    if (err)
-                        return console.error(err);
-
-                    var coordFrom = {};
-                    coordFrom["latitude"] = airportToObject[0].toObject().latitude;
-                    coordFrom["longitude"] = airportToObject[0].toObject().longitude;
-                    var coordTo= {};
-                    coordTo["latitude"] = airportFromObject[0].toObject().latitude;
-                    coordTo["longitude"] = airportFromObject[0].toObject().longitude;
-
-                    var dist = geolib.getDistance(coordFrom,coordTo);
-
-                    res.send((calculateCancellation(parsed, dist/1000)).toString());
-
+                    res.send(calculateBumping(parsed, airportToObject, airportFromObject));
                 });
-            });
-        })
+             });
     });
 
 
