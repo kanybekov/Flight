@@ -23,8 +23,6 @@ app.use(function (err, req, res, next) {
 });
 
 
-
-//TODO: Cтартовать сервис в коллбеке удачного соединения
 mongoose.connect(dbConfig.host);
 
 mongoose.connection.on('connected', function () {

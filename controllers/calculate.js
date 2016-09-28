@@ -2,12 +2,14 @@ var express = require('express'),
     router = express.Router(),
     mongoose = require('mongoose'),
     calculateDelay = require('../helpers/calculators/calculate_delay'),
-    calculateBumping = require('../helpers/calculators/calculate_bumping_off');
+    calculateBumping = require('../helpers/calculators/calculate_bumping_off'),
+    calculateCancellation = require('../helpers/calculators/calculate_cancellation'),
+    checkDate = require('../helpers/check_date');
 
     /*
      occasion - что произошло [отмена - задержка - отказ = 012]
      cityFrom/ cityTo -города
-     date - дата
+     flightDate - дата
      airline - авиакомпания
      warnTime - За сколько дней предупредила об отмене? 7, (7,14),14 = 012
      altFlight - альт. рейс?
@@ -24,6 +26,12 @@ router
     .post('/',function (req, res, next) {
         req.on('data', function (data) {
             var parsed = JSON.parse(data.toString());
+
+            if(!checkDate(parsed.flightDate)) {
+                res.send("Out of date. No refund");
+                return;
+            }
+
             db.Airport.find({
                 "_id" : {$in : [
                     mongoose.Types.ObjectId(parsed.cityTo),
@@ -32,8 +40,12 @@ router
             }, function (err, result) {
                     var airportToObject = result[0];
                     var airportFromObject = result[1];
-
-                    res.send(calculateBumping(parsed, airportToObject, airportFromObject));
+                    if (parsed.occasion == "0")
+                        res.send(calculateCancellation(parsed, airportToObject, airportFromObject));
+                    if (parsed.occasion == "1")
+                        res.send(calculateDelay(parsed, airportToObject, airportFromObject));
+                    if (parsed.occasion == "2")
+                        res.send(calculateBumping(parsed, airportToObject, airportFromObject));
                 });
              });
     });
