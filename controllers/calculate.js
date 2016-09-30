@@ -28,10 +28,10 @@ router
         req.on('data', function (data) {
             var parsed = JSON.parse(data.toString());
 
-            // if(!checkDate(parsed.flightDate)) {
-            //     res.send("Out of date. No refund");
-            //     return;
-            // }
+            if(!checkDate(parsed.flightDate)) {
+                res.send("Out of date. No refund");
+                return;
+            }
 
             db.Airport.find({
                 "_id" : {$in : [
@@ -42,6 +42,7 @@ router
                     var airportToObject = result[0];
                     var airportFromObject = result[1];
                     validate(parsed, globalConstraints);
+
                     if (parsed.occasion == "0") {
                         validate(parsed, constraintsForCancel);
                         if(parsed.altFlight)
