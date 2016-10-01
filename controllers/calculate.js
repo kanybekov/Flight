@@ -41,22 +41,49 @@ router
             }, function (err, result) {
                     var airportToObject = result[0];
                     var airportFromObject = result[1];
-                    validate(parsed, globalConstraints);
-
+                    var q = validate(parsed, globalConstraints);
+                    if(q != undefined) {
+                        res.send(q);
+                        return;
+                    }
                     if (parsed.occasion == "0") {
-                        validate(parsed, constraintsForCancel);
-                        if(parsed.altFlight)
-                            validate(parsed, {altFlightDelayTime : {presence : true}});
+                        q = validate(parsed, constraintsForCancel);
+                        if (q != undefined) {
+                            res.send(q);
+                            return;
+                        }
+                        if(parsed.altFlight) {
+                            q = validate(parsed, {altFlightDelayTime: {presence: true}});
+                            if (q != undefined) {
+                                res.send(q);
+                                return;
+                            }
+                        }
                         res.send(calculateCancellation(parsed, airportToObject, airportFromObject));
+                        //TODO Что делать со случаями без альт. рейсов?
                     }
                     if (parsed.occasion == "1") {
-                        validate(parsed,constraintsForDelay);
+                        q = validate(parsed,constraintsForDelay);
+                        if (q != undefined) {
+                            res.send(q);
+                            return;
+                        }
                         res.send(calculateDelay(parsed, airportToObject, airportFromObject));
                     }
+
                     if (parsed.occasion == "2") {
-                        validate(parsed, constraintsForBumping);
-                        if(parsed.altFlight)
-                            validate(parsed, {altFlightDelayTime : {presence : true}});
+                        q = validate(parsed, constraintsForBumping);
+                        if (q != undefined) {
+                            res.send(q);
+                            return;
+                        }
+                        if(parsed.altFlight) {
+                            q = validate(parsed, {altFlightDelayTime: {presence: true}});
+                            if (q != undefined) {
+                                res.send(q);
+                                return;
+                            }
+                        }
                         res.send(calculateBumping(parsed, airportToObject, airportFromObject));
                     }
                 });
@@ -65,11 +92,11 @@ router
 
 
 var globalConstraints  = {
-    "parsed.occasion" :{
+    occasion :{
         presence: true,
         inclusion : {
             within : {"0": "Cancel", "1" : "Delay", "2" : "Bumping"},
-            message: "Must be 012"
+            message: "Must be 0 or 1 or 2"
         }
     },
     cityFrom :{
@@ -95,8 +122,7 @@ var constraintsForCancel = {
         presence: true
     },
     altFlight: {
-        presence: true,
-        isBoolean: true
+        presence: true
     }
 }
 
@@ -108,8 +134,7 @@ var constraintsForDelay = {
 
 var constraintsForBumping = {
     altFlight: {
-        presence: true,
-        isBoolean: true
+        presence: true
     }
 }
 
