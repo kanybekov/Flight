@@ -1,7 +1,7 @@
 var calculateDistance = require('../calculators/calculate_distance');
 
 module.exports = function (parsed, airportFrom, airportTo) {
-    var distance = calculateDistance(airportFrom, airportTo) / 1000;
+    var distance = calculateDistance(airportFrom, airportTo);
     var delayTime = parsed.altFlightDelayTime;
 
     if(distance < 1500) {
