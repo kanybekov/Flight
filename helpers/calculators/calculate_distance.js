@@ -8,5 +8,5 @@ module.exports = function (airportTo, airportFrom) {
     coordTo["latitude"] = airportFrom.toObject().latitude;
     coordTo["longitude"] = airportFrom.toObject().longitude;
 
-    return geolib.getDistance(coordFrom,coordTo);
+    return geolib.getDistance(coordFrom,coordTo)/1000;
 }

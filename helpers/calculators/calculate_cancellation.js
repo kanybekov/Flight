@@ -2,7 +2,7 @@ var calculateDistance = require('../calculators/calculate_distance');
 
 //TODO Расставить где надо нестрогие неравенства
 module.exports = function (parsedQuery, airportFrom, airportTo) {
-    var distance = calculateDistance(airportTo, airportFrom) / 1000;
+    var distance = calculateDistance(airportTo, airportFrom);
     var warnTime = parsedQuery.warnTime;
     var delayTime = parsedQuery.altFlightDelayTime;
     if (warnTime > 7 && warnTime < 14)

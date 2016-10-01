@@ -9,6 +9,9 @@ module.exports = function (date) {
     var utc1 = Date.UTC(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate());
     var utc2 = Date.UTC(flightTime.getFullYear(), flightTime.getMonth(), flightTime.getDate());
 
-    if (Math.floor((utc2 - utc1) / _MS_PER_DAY) > 6 * 365 * +_MS_PER_DAY)
+    var t1 = Math.floor((utc1 - utc2) / _MS_PER_DAY);
+    var t2 = 6 * 365;
+    if (t1 > t2)
         return false;
+    else return true;
 }
