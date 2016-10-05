@@ -10,17 +10,17 @@ var app = express();
 
 app.use(require('./controllers'));
 
-// app.get('*', function (req, res, next) {
-//     var err = new Error();
-//     err.status = 404;
-//     next(err);
-// });
-// app.use(function (err, req, res, next) {
-//     if (err.status !== 404) {
-//         return next();
-//     }
-//     res.send(err.message || '404');
-// });
+app.get('*', function (req, res, next) {
+    var err = new Error();
+    err.status = 404;
+    next(err);
+});
+app.use(function (err, req, res, next) {
+    if (err.status !== 404) {
+        return next();
+    }
+    res.send(err.message || '404');
+});
 
 
 mongoose.connect(dbConfig.host);
