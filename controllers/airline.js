@@ -1,6 +1,7 @@
 var express = require('express'),
     router = express.Router(),
-    getQueryLanguage = require('../helpers/get_query_language');
+    getQueryLanguage = require('../helpers/get_query_language'),
+    response = require('../helpers/response');
 
 var searchFields = {ru: ['name_ru', 'iata_code'], en: ['name_en', 'iata_code']};
 
@@ -18,9 +19,8 @@ router
         });
 
         db.Airline.find({$or:finalQuery}, finalFilter, function (err, airports) {
-            if (err)
-                return console.error(err);
-            res.send(airports);
+            if (err) response.formattedErrorResponse(res, err, 500);
+                response.formattedSuccessResponse(res,airports);
         });
     });
 

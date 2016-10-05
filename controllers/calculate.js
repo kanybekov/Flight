@@ -1,3 +1,4 @@
+//noinspection JSUnresolvedFunction
 var express = require('express'),
     router = express.Router(),
     mongoose = require('mongoose'),
@@ -29,10 +30,11 @@ router
     .post('/', function (req, res, next) {
         var parsed = req.body;
 
+        console.log(parsed);
         var valid = validate(parsed, globalConstraints);
         if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
 
-        var valid = validate(parsed, constraints[parsed.occasion]);
+        valid = validate(parsed, constraints[parsed.occasion]);
         if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
 
         if (!checkDate(parsed.flightDate)) return response.formattedErrorResponse(res, 'Out of date. No refund', 406);
@@ -54,28 +56,21 @@ router
                     var airportFromObject = result[1];
                     if (parsed.occasion == "0") {
                         if (parsed.altFlight) {
-                            q = validate(parsed, {altFlightDelayTime: {presence: true}});
-                            if (q != undefined) {
-                                res.send(q);
-                                return;
-                            }
+                            valid = validate(parsed, {altFlightDelayTime: {presence: true}});
+                            if(valid != undefined) return response.formattedErrorResponse(res, valid, 406);
                         }
-                        res.send(calculateCancellation(parsed, airportToObject, airportFromObject));
-                        //TODO Что делать со случаями без альт. рейсов?
+                        response.formattedSuccessResponse(res, calculateCancellation(parsed, airportToObject, airportFromObject));
                     }
                     if (parsed.occasion == "1") {
-                        res.send(calculateDelay(parsed, airportToObject, airportFromObject));
+                        response.formattedSuccessResponse(res, calculateDelay(parsed, airportToObject, airportFromObject));
                     }
 
                     if (parsed.occasion == "2") {
                         if (parsed.altFlight) {
-                            q = validate(parsed, {altFlightDelayTime: {presence: true}});
-                            if (q != undefined) {
-                                res.send(q);
-                                return;
-                            }
+                            valid = validate(parsed, {altFlightDelayTime: {presence: true}});
+                            if (valid != undefined) return response.formattedErrorResponse(res,valid, 406);
                         }
-                        res.send(calculateBumping(parsed, airportToObject, airportFromObject));
+                        response.formattedSuccessResponse(res, calculateBumping(parsed, airportToObject, airportFromObject));
                     }
                 });
             }
