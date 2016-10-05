@@ -1,14 +1,36 @@
 var serviceConfig = require('./сonfig/service.json'),
     dbConfig = require('./сonfig/db.json'),
-    mongoose = require('mongoose');
+    express = require('express'),
+    mongoose = require('mongoose'),
+    extend = require('extend'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    compress = require('compression');
 
 // Подсоединение класса с описанием всех моделей
 db = require('./models/models');
 
-var express = require('express');
 var app = express();
-
+app.use(compress());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
+app.use(allowCrossDomain);
 app.use(require('./controllers'));
+
+function allowCrossDomain(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+        res.sendStatus(200);
+    }
+    else {
+        next();
+    }
+}
 
 app.get('*', function (req, res, next) {
     var err = new Error();
@@ -32,7 +54,7 @@ mongoose.connection.on('connected', function () {
     console.log('service started at ' + host + ':' + port);
 });
 
-mongoose.connection.on('error',function (err) {
+mongoose.connection.on('error', function (err) {
     console.error(err);
 });
 

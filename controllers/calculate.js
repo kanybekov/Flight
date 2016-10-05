@@ -27,76 +27,74 @@ var express = require('express'),
 
 router
     .post('/', function (req, res, next) {
-        req.on('data', function (data) {
-            var parsed = JSON.parse(data.toString());
-            console.log(parsed);
+        var parsed = req.body;
+        console.log(parsed);
 
-            var valid = validate(parsed, globalConstraints);
-            if (valid != undefined) {
-                return response.formattedErrorResponse(res, valid, 406);
+        var valid = validate(parsed, globalConstraints);
+        if (valid != undefined) {
+            return response.formattedErrorResponse(res, valid, 406);
+        }
+
+        var valid = validate(parsed, constraints[parsed.occasion]);
+        if (valid != undefined) {
+            return response.formattedErrorResponse(res, valid, 406);
+        }
+
+        if (!checkDate(parsed.flightDate)) {
+            res.send("Out of date. No refund");
+            return;
+        }
+
+
+        checkAirports(parsed, function (result) {
+            if (result == false) {
+                var message = "An EU flight is where the flight departed from an EU airport, regardless of the airline OR where an EU airline landed at an EU airport";
+                return response.formattedErrorResponse(res, message, 406);
             }
-
-            var valid = validate(parsed, constraints[parsed.occasion]);
-            if (valid != undefined) {
-                return response.formattedErrorResponse(res, valid, 406);
-            }
-
-            if (!checkDate(parsed.flightDate)) {
-                res.send("Out of date. No refund");
-                return;
-            }
-
-
-            checkAirports(parsed, function (result) {
-                if (result == false) {
-                    var message = "An EU flight is where the flight departed from an EU airport, regardless of the airline OR where an EU airline landed at an EU airport";
-                    return response.formattedErrorResponse(res, message, 406);
-                }
-                else {
-                    db.Airport.find({
-                        "_id": {
-                            $in: [
-                                mongoose.Types.ObjectId(parsed.cityTo),
-                                mongoose.Types.ObjectId(parsed.cityFrom)
-                            ]
-                        }
-                    }, function (err, result) {
-                        console.log(result);
-                        console.log(err);
-                        console.log(mongoose.Types.ObjectId(parsed.cityTo));
-                        console.log(mongoose.Types.ObjectId(parsed.cityFrom));
-                        var airportToObject = result[0];
-                        var airportFromObject = result[1];
-                        if (parsed.occasion == "0") {
-                            if (parsed.altFlight) {
-                                q = validate(parsed, {altFlightDelayTime: {presence: true}});
-                                if (q != undefined) {
-                                    res.send(q);
-                                    return;
-                                }
+            else {
+                db.Airport.find({
+                    "_id": {
+                        $in: [
+                            mongoose.Types.ObjectId(parsed.cityTo),
+                            mongoose.Types.ObjectId(parsed.cityFrom)
+                        ]
+                    }
+                }, function (err, result) {
+                    console.log(result);
+                    console.log(err);
+                    console.log(mongoose.Types.ObjectId(parsed.cityTo));
+                    console.log(mongoose.Types.ObjectId(parsed.cityFrom));
+                    var airportToObject = result[0];
+                    var airportFromObject = result[1];
+                    if (parsed.occasion == "0") {
+                        if (parsed.altFlight) {
+                            q = validate(parsed, {altFlightDelayTime: {presence: true}});
+                            if (q != undefined) {
+                                res.send(q);
+                                return;
                             }
-                            res.send(calculateCancellation(parsed, airportToObject, airportFromObject));
-                            //TODO Что делать со случаями без альт. рейсов?
                         }
-                        if (parsed.occasion == "1") {
-                            res.send(calculateDelay(parsed, airportToObject, airportFromObject));
-                        }
+                        res.send(calculateCancellation(parsed, airportToObject, airportFromObject));
+                        //TODO Что делать со случаями без альт. рейсов?
+                    }
+                    if (parsed.occasion == "1") {
+                        res.send(calculateDelay(parsed, airportToObject, airportFromObject));
+                    }
 
-                        if (parsed.occasion == "2") {
-                            if (parsed.altFlight) {
-                                q = validate(parsed, {altFlightDelayTime: {presence: true}});
-                                if (q != undefined) {
-                                    res.send(q);
-                                    return;
-                                }
+                    if (parsed.occasion == "2") {
+                        if (parsed.altFlight) {
+                            q = validate(parsed, {altFlightDelayTime: {presence: true}});
+                            if (q != undefined) {
+                                res.send(q);
+                                return;
                             }
-                            console.log(airportToObject);
-                            console.log(airportFromObject);
-                            res.send(calculateBumping(parsed, airportToObject, airportFromObject));
                         }
-                    });
-                }
-            });
+                        console.log(airportToObject);
+                        console.log(airportFromObject);
+                        res.send(calculateBumping(parsed, airportToObject, airportFromObject));
+                    }
+                });
+            }
         });
     });
 
