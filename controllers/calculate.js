@@ -30,14 +30,15 @@ router
     .post('/', function (req, res, next) {
         var parsed = req.body;
 
-        console.log(parsed);
         var valid = validate(parsed, globalConstraints);
         if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
 
         valid = validate(parsed, constraints[parsed.occasion]);
         if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
 
-        if (!checkDate(parsed.flightDate)) return response.formattedErrorResponse(res, 'Out of date. No refund', 406);
+        var validDate = checkDate(parsed.flightDate, res);
+        if(validDate == -1) return response.formattedErrorResponse(res, 'Date isn\'t valid', 406);
+        if (validDate == 0) return response.formattedErrorResponse(res, 'Out of date. No refund', 406);
 
         checkAirports(parsed, function (result) {
             if (result == false) {
