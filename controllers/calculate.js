@@ -7,7 +7,7 @@ var express = require('express'),
     calculateBumping = require('../helpers/calculators/calculate_bumping_off'),
     calculateCancellation = require('../helpers/calculators/calculate_cancellation'),
     checkDate = require('../helpers/check_date'),
-    checkAirports = require('../helpers/checkAirports.js'),
+    checkAirports = require('../helpers/check_airports.js'),
     response = require('../helpers/response');
 
 /*
