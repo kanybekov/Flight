@@ -28,30 +28,20 @@ var express = require('express'),
 router
     .post('/', function (req, res, next) {
         var parsed = req.body;
-        console.log(parsed);
 
         var valid = validate(parsed, globalConstraints);
-        if (valid != undefined) {
-            return response.formattedErrorResponse(res, valid, 406);
-        }
+        if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
 
         var valid = validate(parsed, constraints[parsed.occasion]);
-        if (valid != undefined) {
-            return response.formattedErrorResponse(res, valid, 406);
-        }
+        if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
 
-        if (!checkDate(parsed.flightDate)) {
-            res.send("Out of date. No refund");
-            return;
-        }
-
+        if (!checkDate(parsed.flightDate)) return response.formattedErrorResponse(res, 'Out of date. No refund', 406);
 
         checkAirports(parsed, function (result) {
             if (result == false) {
                 var message = "An EU flight is where the flight departed from an EU airport, regardless of the airline OR where an EU airline landed at an EU airport";
                 return response.formattedErrorResponse(res, message, 406);
-            }
-            else {
+            } else {
                 db.Airport.find({
                     "_id": {
                         $in: [
@@ -60,10 +50,6 @@ router
                         ]
                     }
                 }, function (err, result) {
-                    console.log(result);
-                    console.log(err);
-                    console.log(mongoose.Types.ObjectId(parsed.cityTo));
-                    console.log(mongoose.Types.ObjectId(parsed.cityFrom));
                     var airportToObject = result[0];
                     var airportFromObject = result[1];
                     if (parsed.occasion == "0") {
@@ -89,8 +75,6 @@ router
                                 return;
                             }
                         }
-                        console.log(airportToObject);
-                        console.log(airportFromObject);
                         res.send(calculateBumping(parsed, airportToObject, airportFromObject));
                     }
                 });
@@ -138,13 +122,13 @@ var constraintsForDelay = {
     delayTime: {
         presence: true
     }
-}
+};
 
 var constraintsForBumping = {
     altFlight: {
         presence: true
     }
-}
+};
 
 var constraints = [constraintsForCancel, constraintsForDelay, constraintsForBumping];
 
