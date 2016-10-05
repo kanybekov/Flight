@@ -17,7 +17,8 @@ var db = {
         iata_code: String,
         name_en: String,
         country_en: String,
-        country_ru: String
+        country_ru: String,
+        is_europe: String
     }))
 };
 

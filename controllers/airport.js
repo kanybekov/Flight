@@ -1,7 +1,6 @@
 var express = require('express'),
     router = express.Router(),
-    getQueryLanguage = require('../helpers/get_query_language'),
-    response = require('../helpers/response');
+    getQueryLanguage = require('../helpers/get_query_language');
 
 var searchFields = {ru: ['name_ru', 'iata_code'], en: ['name_en', 'iata_code']};
 

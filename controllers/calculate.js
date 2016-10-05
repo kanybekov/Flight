@@ -5,7 +5,8 @@ var express = require('express'),
     calculateDelay = require('../helpers/calculators/calculate_delay'),
     calculateBumping = require('../helpers/calculators/calculate_bumping_off'),
     calculateCancellation = require('../helpers/calculators/calculate_cancellation'),
-    checkDate = require('../helpers/check_date');
+    checkDate = require('../helpers/check_date'),
+    checkAirports = require('../helpers/checkAirports.js');
 
     /*
      occasion - что произошло [отмена - задержка - отказ = 012]
@@ -25,69 +26,76 @@ var express = require('express'),
 
 router
     .post('/',function (req, res, next) {
-        req.on('data', function (data) {
-            var parsed = JSON.parse(data.toString());
+         req.on('data', function (data) {
+             var parsed = JSON.parse(data.toString());
 
-            if(!checkDate(parsed.flightDate)) {
-                res.send("Out of date. No refund");
-                return;
-            }
+             var valid = validate(parsed, globalConstraints);
+             if (valid != undefined) {
+                 res.send(valid);
+                 return;
+             }
 
-            db.Airport.find({
-                "_id" : {$in : [
-                    mongoose.Types.ObjectId(parsed.cityTo),
-                    mongoose.Types.ObjectId(parsed.cityFrom)
-                ]}
-            }, function (err, result) {
-                    var airportToObject = result[0];
-                    var airportFromObject = result[1];
-                    var q = validate(parsed, globalConstraints);
-                    if(q != undefined) {
-                        res.send(q);
-                        return;
-                    }
-                    if (parsed.occasion == "0") {
-                        q = validate(parsed, constraintsForCancel);
-                        if (q != undefined) {
-                            res.send(q);
-                            return;
-                        }
-                        if(parsed.altFlight) {
-                            q = validate(parsed, {altFlightDelayTime: {presence: true}});
-                            if (q != undefined) {
-                                res.send(q);
-                                return;
-                            }
-                        }
-                        res.send(calculateCancellation(parsed, airportToObject, airportFromObject));
-                        //TODO Что делать со случаями без альт. рейсов?
-                    }
-                    if (parsed.occasion == "1") {
-                        q = validate(parsed,constraintsForDelay);
-                        if (q != undefined) {
-                            res.send(q);
-                            return;
-                        }
-                        res.send(calculateDelay(parsed, airportToObject, airportFromObject));
-                    }
+             var valid = validate(parsed, constraints[parsed.occasion]);
+             if (valid != undefined) {
+                 res.send(valid);
+                 return;
+             }
 
-                    if (parsed.occasion == "2") {
-                        q = validate(parsed, constraintsForBumping);
-                        if (q != undefined) {
-                            res.send(q);
-                            return;
-                        }
-                        if(parsed.altFlight) {
-                            q = validate(parsed, {altFlightDelayTime: {presence: true}});
-                            if (q != undefined) {
-                                res.send(q);
-                                return;
-                            }
-                        }
-                        res.send(calculateBumping(parsed, airportToObject, airportFromObject));
-                    }
-                });
+             if(!checkDate(parsed.flightDate)){
+                     res.send("Out of date. No refund");
+                     return;
+             }
+
+
+             checkAirports(parsed, function (result) {
+                 if (result == false) {
+                     res.send("An EU flight is where the flight departed from an EU airport, regardless of the airline OR where an EU airline landed at an EU airport")
+                     return;
+                 }
+             })
+             // if(checkAirports(parsed) == false){
+             //     res.send("Naah");
+             //     return;
+             // }
+
+
+             db.Airport.find({
+                 "_id": {
+                     $in: [
+                         mongoose.Types.ObjectId(parsed.cityTo),
+                         mongoose.Types.ObjectId(parsed.cityFrom)
+                     ]
+                 }
+             }, function (err, result) {
+                 var airportToObject = result[0];
+                 var airportFromObject = result[1];
+                 if (parsed.occasion == "0") {
+                     if (parsed.altFlight) {
+                         q = validate(parsed, {altFlightDelayTime: {presence: true}});
+                         if (q != undefined) {
+                             res.send(q);
+                             return;
+                         }
+                     }
+                     res.send(calculateCancellation(parsed, airportToObject, airportFromObject));
+                     //TODO Что делать со случаями без альт. рейсов?
+                 }
+                 if (parsed.occasion == "1") {
+                     res.send(calculateDelay(parsed, airportToObject, airportFromObject));
+                 }
+
+                 if (parsed.occasion == "2") {
+                     if (parsed.altFlight) {
+                         q = validate(parsed, {altFlightDelayTime: {presence: true}});
+                         if (q != undefined) {
+                             res.send(q);
+                             return;
+                         }
+                     }
+                     res.send(calculateBumping(parsed, airportToObject, airportFromObject));
+                 }
              });
+         });
     });
 
 
@@ -126,16 +134,18 @@ var constraintsForCancel = {
     }
 }
 
-var constraintsForDelay = {
+var constraintsForDelay =  {
     delayTime: {
         presence: true
     }
 }
 
-var constraintsForBumping = {
+var constraintsForBumping =  {
     altFlight: {
         presence: true
     }
 }
+
+var constraints = [constraintsForCancel,constraintsForDelay,constraintsForBumping];
 
 module.exports = router;
