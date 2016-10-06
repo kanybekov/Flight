@@ -8,7 +8,8 @@ var express = require('express'),
     calculateCancellation = require('../helpers/calculators/calculate_cancellation'),
     checkDate = require('../helpers/check_date'),
     checkAirports = require('../helpers/check_airports.js'),
-    response = require('../helpers/response');
+    response = require('../helpers/response'),
+    lodash = require('lodash');
 
 /*
  occasion - что произошло [отмена - задержка - отказ = 012]
@@ -53,8 +54,10 @@ router
                         ]
                     }
                 }, function (err, result) {
-                    var airportToObject = result[0];
-                    var airportFromObject = result[1];
+                    var arr = lodash.keyBy(result, '_id');
+                    var airportToObject = arr[parsed.cityTo];
+                    var airportFromObject = arr[parsed.cityFrom];
+
                     if (parsed.occasion == "0") {
                         if (parsed.altFlight) {
                             valid = validate(parsed, {altFlightDelayTime: {presence: true}});
