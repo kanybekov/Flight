@@ -9,6 +9,7 @@ var express = require('express'),
     checkDate = require('../helpers/check_date'),
     checkAirports = require('../helpers/check_airports.js'),
     response = require('../helpers/response'),
+    calculateDistance = require('../helpers/calculators/calculate_distance'),
     lodash = require('lodash');
 
 /*
@@ -30,7 +31,6 @@ var express = require('express'),
 router
     .post('/', function (req, res, next) {
         var parsed = req.body;
-
         var valid = validate(parsed, globalConstraints);
         if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
 
@@ -38,49 +38,56 @@ router
         if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
 
         var validDate = checkDate(parsed.flightDate, res);
-        if(validDate == -1) return response.formattedErrorResponse(res, 'Date isn\'t valid', 406);
+        if (validDate == -1) return response.formattedErrorResponse(res, 'Date isn\'t valid', 406);
         if (validDate == 0) return response.formattedErrorResponse(res, 'Out of date. No refund', 406);
 
-        checkAirports(parsed, function (result) {
-            if (result == false) {
-                var message = "An EU flight is where the flight departed from an EU airport, regardless of the airline OR where an EU airline landed at an EU airport";
-                return response.formattedErrorResponse(res, message, 406);
-            } else {
-                db.Airport.find({
-                    "_id": {
-                        $in: [
-                            mongoose.Types.ObjectId(parsed.cityTo),
-                            mongoose.Types.ObjectId(parsed.cityFrom)
-                        ]
-                    }
-                }, function (err, result) {
-                    var arr = lodash.keyBy(result, '_id');
-                    var airportToObject = arr[parsed.cityTo];
-                    var airportFromObject = arr[parsed.cityFrom];
+        // checkAirports(parsed, function (result) {
+        //     if (result == false) {
+        //         var message = "An EU flight is where the flight departed from an EU airport, regardless of the airline OR where an EU airline landed at an EU airport";
+        //         return response.formattedErrorResponse(res, message, 406);
+        //     } else {
+        db.Airport.find({
+            "_id": {
+                $in: [
+                    mongoose.Types.ObjectId(parsed.cityTo),
+                    mongoose.Types.ObjectId(parsed.cityFrom)
+                ]
+            }
+        }, function (err, result) {
+            var arr = lodash.keyBy(result, '_id');
+            var airportToObject = arr[parsed.cityTo];
+            var airportFromObject = arr[parsed.cityFrom];
+
+            checkAirports(airportToObject, airportFromObject, parsed.airline, function (result) {
+                if (result == false) {
+                    var message = "An EU flight is where the flight departed from an EU airport, regardless of the airline OR where an EU airline landed at an EU airport";
+                    return response.formattedErrorResponse(res, message, 406);
+                }
+                else{
+                    var distance = calculateDistance(airportFromObject, airportToObject);
 
                     if (parsed.occasion == "0") {
                         if (parsed.altFlight) {
                             valid = validate(parsed, {altFlightDelayTime: {presence: true}});
-                            if(valid != undefined) return response.formattedErrorResponse(res, valid, 406);
+                            if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
                         }
-                        response.formattedSuccessResponse(res, calculateCancellation(parsed, airportToObject, airportFromObject));
+                        return response.formattedSuccessResponse(res, calculateCancellation(parsed, distance));
                     }
                     if (parsed.occasion == "1") {
-                        response.formattedSuccessResponse(res, calculateDelay(parsed, airportToObject, airportFromObject));
+                        return response.formattedSuccessResponse(res, calculateDelay(parsed, airportFromObject, airportToObject, distance));
                     }
 
                     if (parsed.occasion == "2") {
                         if (parsed.altFlight) {
                             valid = validate(parsed, {altFlightDelayTime: {presence: true}});
-                            if (valid != undefined) return response.formattedErrorResponse(res,valid, 406);
+                            if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
                         }
-                        response.formattedSuccessResponse(res, calculateBumping(parsed, airportToObject, airportFromObject));
+                        return response.formattedSuccessResponse(res, calculateBumping(parsed, airportFromObject, airportToObject, distance));
                     }
-                });
-            }
+                }
+            });
         });
     });
-
 
 var globalConstraints = {
     occasion: {
@@ -105,10 +112,6 @@ var globalConstraints = {
 }
 
 var constraintsForCancel = {
-    delayTime: {
-        presence: true,
-        message: "No delay time"
-    },
     warnTime: {
         presence: true
     },
@@ -118,7 +121,7 @@ var constraintsForCancel = {
 }
 
 var constraintsForDelay = {
-    delayTime: {
+    flightDelayTime: {
         presence: true
     }
 };
