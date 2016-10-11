@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var db = {
-    Airport: mongoose.model('airport', mongoose.Schema({
+    Airport: mongoose.model('newairport', mongoose.Schema({
         iata_code: String,
         name_ru: String,
         name_en: String,

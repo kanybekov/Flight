@@ -71,10 +71,10 @@ router
                             valid = validate(parsed, {altFlightDelayTime: {presence: true}});
                             if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
                         }
-                        return response.formattedSuccessResponse(res, calculateCancellation(parsed, distance));
+                        return response.formattedSuccessResponse(res, calculateCancellation(parsed, distance), distance, airportFromObject, airportToObject, parsed.airline);
                     }
                     if (parsed.occasion == "1") {
-                        return response.formattedSuccessResponse(res, calculateDelay(parsed, airportFromObject, airportToObject, distance));
+                        return response.formattedSuccessResponse(res, calculateDelay(parsed, airportFromObject, airportToObject, distance), distance, airportFromObject, airportToObject, parsed.airline);
                     }
 
                     if (parsed.occasion == "2") {
@@ -82,7 +82,7 @@ router
                             valid = validate(parsed, {altFlightDelayTime: {presence: true}});
                             if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
                         }
-                        return response.formattedSuccessResponse(res, calculateBumping(parsed, airportFromObject, airportToObject, distance));
+                        return response.formattedSuccessResponse(res, calculateBumping(parsed, airportFromObject, airportToObject, distance),distance, airportFromObject, airportToObject, parsed.airline);
                     }
                 }
             });
