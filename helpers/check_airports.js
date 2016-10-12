@@ -6,6 +6,6 @@ module.exports = function (airportTo, airportFrom, airline, callback) {
         },
         function (err, result) {
             var airline = result[0];
-            callback(airportFrom.is_europe == 1 || (airportTo.is_europe == 1 && airline.is_europe == 1));
+            callback(airportFrom.is_europe == 1 || (airportTo.is_europe == 1 && airline.is_europe == 1), airline);
         })
 };

@@ -58,7 +58,7 @@ router
             var airportToObject = arr[parsed.cityTo];
             var airportFromObject = arr[parsed.cityFrom];
 
-            checkAirports(airportToObject, airportFromObject, parsed.airline, function (result) {
+            checkAirports(airportToObject, airportFromObject, parsed.airline, function (result, airline) {
                 if (result == false) {
                     var message = "An EU flight is where the flight departed from an EU airport, regardless of the airline OR where an EU airline landed at an EU airport";
                     return response.formattedErrorResponse(res, message, 406);
@@ -71,10 +71,10 @@ router
                             valid = validate(parsed, {altFlightDelayTime: {presence: true}});
                             if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
                         }
-                        return response.formattedSuccessResponse(res, calculateCancellation(parsed, distance), distance, airportFromObject, airportToObject, parsed.airline);
+                        return response.formattedSuccessResponse(res, calculateCancellation(parsed, distance), distance, airportFromObject, airportToObject, airline);
                     }
                     if (parsed.occasion == "1") {
-                        return response.formattedSuccessResponse(res, calculateDelay(parsed, airportFromObject, airportToObject, distance), distance, airportFromObject, airportToObject, parsed.airline);
+                        return response.formattedSuccessResponse(res, calculateDelay(parsed, airportFromObject, airportToObject, distance), distance, airportFromObject, airportToObject, airline);
                     }
 
                     if (parsed.occasion == "2") {
@@ -82,7 +82,7 @@ router
                             valid = validate(parsed, {altFlightDelayTime: {presence: true}});
                             if (valid != undefined) return response.formattedErrorResponse(res, valid, 406);
                         }
-                        return response.formattedSuccessResponse(res, calculateBumping(parsed, airportFromObject, airportToObject, distance),distance, airportFromObject, airportToObject, parsed.airline);
+                        return response.formattedSuccessResponse(res, calculateBumping(parsed, airportFromObject, airportToObject, distance),distance, airportFromObject, airportToObject, airline);
                     }
                 }
             });
