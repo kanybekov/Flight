@@ -14,5 +14,11 @@
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.0",
     "validate.js": "^0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/forever/bin/forever start app.js",
+    "stop": "./node_modules/forever/bin/forever stop app.js",
+    "restart": "./node_modules/forever/bin/forever restart app.js"
   }
 }
