@@ -1,5 +1,5 @@
-var serviceConfig = require('./сonfig/service.json'),
-    dbConfig = require('./сonfig/db.json'),
+var serviceConfig = require('./config/service.json'),
+    dbConfig = require('./config/db.json'),
     express = require('express'),
     mongoose = require('mongoose'),
     extend = require('extend'),
