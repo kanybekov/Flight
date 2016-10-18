@@ -1,28 +1,34 @@
 var express = require('express'),
     router = express.Router(),
-    getQueryLanguage = require('../helpers/get_query_language'),
     response = require('../helpers/response');
 
-var searchFields = {ru: ['name_ru', 'iata_code'], en: ['name_en', 'iata_code']};
-
 router
-    .get('/:q', function (req, res, next) {
-        var searchString = req.params.q;
-        var lang = getQueryLanguage(searchString)
-        var finalQuery = [];
-        var finalFilter = {};
-        searchFields[lang].forEach(function(field) {
-            finalFilter[field] = 1;
-            var pp = {};
-            pp[field] = { $regex : new RegExp('^' + searchString, "i")};
-            finalQuery.push(pp);
-        });
+    .post('/', function (req, res, next) {
+        var fullRequest = req.body;
+        var limitAmount = fullRequest.limit;
+        var query = fullRequest.where;
+        var finalQuery = {};
 
-        db.Airline.find({$or:finalQuery}, finalFilter, function (err, airports) {
-            if (err) response.formattedErrorResponse(res, err, 500);
-                response.formattedSuccessResponse(res,airports);
-        });
-    });
+        var arr = [];
+
+        var q1 = {}, q2 = {}, q3  = {}, q4 = {};
+
+        q1.Name = query["$or"][0].Name;
+        q2.alias = query["$or"][1].alias;
+        q3.Callsign = query["$or"][2].Callsign;
+        q4.IATA = query["$or"][3].IATA;
+
+        arr.push(q1);
+        arr.push(q2);
+        arr.push(q3);
+        arr.push(q4);
+
+        finalQuery["$or"] = arr;
+
+        db.Airline.find(finalQuery, function (err, airlines) {
+            res.send(airlines);
+        }).limit(limitAmount);
+    })
 
 module.exports = router;
 

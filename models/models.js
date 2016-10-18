@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 
 var db = {
-    Airport: mongoose.model('newairport', mongoose.Schema({
-        iata_code: String,
-        name_ru: String,
-        name_en: String,
-        city_ru: String,
-        city_en: String,
+    Airport: mongoose.model('airport', mongoose.Schema({
+        IATA: String,
+        RussianName: String,
+        Name: String,
+        Russian: String,
+        City: String,
         country_ru: String,
         country_en: String,
         latitude: String,
@@ -14,8 +14,8 @@ var db = {
         is_europe: String
     })),
     Airline: mongoose.model('airline', mongoose.Schema({
-        iata_code: String,
-        name_en: String,
+        Callsign: String,
+        Name: String,
         country_en: String,
         country_ru: String,
         is_europe: String
