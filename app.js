@@ -12,7 +12,7 @@ db = require('./models/models');
 
 var app = express();
 app.use(compress());
-app.use(bodyParser.json());
+app.use(bodyParser.json({type:'*/*'}));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(allowCrossDomain);
