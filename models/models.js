@@ -16,6 +16,7 @@ var db = {
     Airline: mongoose.model('airline', mongoose.Schema({
         Callsign: String,
         Name: String,
+        Russian: String,
         country_en: String,
         country_ru: String,
         is_europe: String
