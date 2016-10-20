@@ -30,7 +30,36 @@ var formattedErrorResponse = function (res, message, status) {
     res.send(JSON.stringify(result));
 };
 
+var formattedAirlineSuccessResponse = function (res, airlines) {
+    res.contentType('application/json');
+    var result = {};
+    result["results"] = [];
+    var curResult = {};
+    var now = new Date;
+    var utc_timestamp = Date.UTC(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate() ,
+        now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
+
+    airlines.forEach(function (airline) {
+        curResult = {
+            'Active' : "y",
+            "Country" :airline.country_en,
+            "IATA": airline.IATA,
+            "ICAO" : "ICAO",
+            "ID" : "123",
+            "Name" : airline.Name,
+            "alias" : airline.Name,
+            "createdAt" : utc_timestamp,
+            "objectId" : airline._id,
+            "priority" : "0",
+            "updatedAt" : utc_timestamp
+        }
+        result["results"].push(curResult);
+    });
+    res.send(JSON.stringify(result));
+}
+
 module.exports = {
     'formattedSuccessResponse': formattedSuccessResponse,
-    'formattedErrorResponse': formattedErrorResponse
+    'formattedErrorResponse': formattedErrorResponse,
+    'formattedAirlineSuccessResponse' : formattedAirlineSuccessResponse
 };
