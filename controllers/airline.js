@@ -41,10 +41,9 @@ router
                 arr.push(q1);
         }
             finalQuery["$or"] = arr;
-            console.log(finalQuery);
             db.Airline.find(finalQuery, function (err, airlines) {
-            res.send(airlines);
-        }).limit(limitAmount);
+                response.formattedAirlineSuccessResponse(res, airlines);
+            }).limit(limitAmount);
     })
 
 module.exports = router;

@@ -30,7 +30,69 @@ var formattedErrorResponse = function (res, message, status) {
     res.send(JSON.stringify(result));
 };
 
+var formattedAirlineSuccessResponse = function (res, airlines) {
+    res.contentType('application/json');
+    var result = {};
+    result["results"] = [];
+    var curResult = {};
+    var utc_timestamp = moment.utc();
+
+    airlines.forEach(function (airline) {
+        curResult = {
+            'Active' : "y",
+            "Country" :airline.country_en,
+            "IATA": airline.IATA,
+            "ICAO" : "ICAO",
+            "ID" : "123",
+            "Name" : airline.Name,
+            "alias" : airline.Name,
+            "createdAt" : utc_timestamp,
+            "objectId" : airline._id,
+            "priority" : "0",
+            "updatedAt" : utc_timestamp
+        }
+        result["results"].push(curResult);
+    });
+    res.send(JSON.stringify(result));
+}
+
+var formattedAirportSuccessResponse = function (res, airports) {
+    res.contentType('application/json');
+    var result = {};
+    result["results"] = [];
+    var curResult = {};
+    var now = new Date();
+    var utc_timestamp = moment.utc();
+
+    airports.forEach(function (airport) {
+        curResult = {
+            "Altitude" : 322,
+            "City" : airport.City,
+            "CoCode" : "CoCode322",
+            "Code" : airport.IATA,
+            "Country" : airport.country_en,
+            "IATA" : airport.IATA,
+            "ID" : 322,
+            "Latitude" : airport.latitude,
+            "LongTimezone":"europe/london",
+            "Longtitude" : airport.longitude,
+            "Name" : airport.Name ,
+            "Russian" : airport.RussianName,
+            "Timezone" : 322,
+            "ZoneCode" : "e",
+            "createdAt" : utc_timestamp,
+            "eu" : airport.is_europe ,
+            "objectId" : airport._id,
+            "priority" : "1",
+            "updatedAt" : utc_timestamp
+        }
+        result["results"].push(curResult);
+    });
+    res.send(JSON.stringify(result));
+}
 module.exports = {
     'formattedSuccessResponse': formattedSuccessResponse,
-    'formattedErrorResponse': formattedErrorResponse
+    'formattedErrorResponse': formattedErrorResponse,
+    'formattedAirlineSuccessResponse' : formattedAirlineSuccessResponse,
+    'formattedAirportSuccessResponse' : formattedAirportSuccessResponse
 };
