@@ -35,6 +35,7 @@ var formattedAirlineSuccessResponse = function (res, airlines) {
     var result = {};
     result["results"] = [];
     var curResult = {};
+
     var utc_timestamp = moment.utc();
 
     airlines.forEach(function (airline) {
@@ -61,7 +62,6 @@ var formattedAirportSuccessResponse = function (res, airports) {
     var result = {};
     result["results"] = [];
     var curResult = {};
-    var now = new Date();
     var utc_timestamp = moment.utc();
 
     airports.forEach(function (airport) {
